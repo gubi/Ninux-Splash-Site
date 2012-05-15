@@ -19,6 +19,13 @@ Create your own html contents and place in the `images` dir, then create its pag
 
 Enjoy :)
 
+# ToDo
+
+1. PDA-tablet version
+
+# Hack
+You can save much loading time simply by compressing contents and scripts in one row... ;)
+
 ----
 ## License
     #  License
