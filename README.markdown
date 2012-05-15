@@ -12,8 +12,7 @@ Create your own html contents and place in the `images` dir, then create its pag
 1. If you have no SCP, install with `apt-get install scp` on your terminal or [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
 
 2. Place the unpacked folder to the root of your System, then run this command on the terminal
-    
-    scp -r {PATH_TO}/Ninux-Splash-Site/* {USERNAME}@{DEVICE_IP}:/etc/nodogsplash/htdocs/
+    `scp -r {PATH_TO}/Ninux-Splash-Site/* {USERNAME}@{DEVICE_IP}:/etc/nodogsplash/htdocs/`
     
 
 3. Reboot NoDogSplash with `/etc/nodogsplash restart`
