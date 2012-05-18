@@ -2,8 +2,8 @@
 
 => Content recall file
 
-Please fill out the array with page data and create a tpl file in "common/tpl/" for a new page
-Suggestion: in tpl file backslash the quotation mark for a better content loading
+Please fill out the array with page data and create a tpl file in "$imagesdir/" for a new page
+Suggestion: backslash the quotation mark in tpl file for a better content loading
 */
 var pages = {
 	"home": {
