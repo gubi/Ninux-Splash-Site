@@ -6,14 +6,19 @@ This Splash-site is in HTML5 and CSS3, and uses jQuery 1.6.4
 
 ----
 # Before Install
-Create your own html contents and place in the `images` dir, then create its page in the js array on `pages.js` file.
+Create your own html contents and place them in `common/includes/`, then create the structure of the pages in the js array of `common/js/pages.js` file.
+
+This repository contains 2 folders: compressed and uncompressed.
+The files contained in the compressed folder have been minified and gzipped, if you want to use them you have to make sure they are server with the right content header (content-encoding: gzip). 
+
+If you need (and you probably will) to change things use the files in the uncompressed folder, then report the changes to the compressed folder (minify and gzip).
 
 # Install to NoDogSplash
 1. If you have no SCP, install with `apt-get install scp` on your terminal or [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
 
-2. Place the unpacked folder to the root of your System, then run this command on the terminal
-    `scp -r {PATH_TO}/Ninux-Splash-Site/* {USERNAME}@{DEVICE_IP}:/etc/nodogsplash/htdocs/`
-    
+2. CD into the unpacked folder on your system, then run this command on the terminal
+    `scp -r {PATH_TO}/Ninux-Splash-Site/[CHOSEN-VERSION]* {USERNAME}@{DEVICE_IP}:/etc/nodogsplash/htdocs/`
+    [CHOSEN-VERSION] is either compressed or uncompressed (the latter might need a bit more hacking to get it working). 
 
 3. Reboot NoDogSplash with `/etc/nodogsplash restart`
 

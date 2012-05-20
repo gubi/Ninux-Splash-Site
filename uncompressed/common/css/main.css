@@ -1,23 +1,24 @@
-@font-face {
+﻿@font-face {
 	font-family: "ubuntu";
 	font-style: normal;
 	font-weight: bold;
-	src: local("ubuntu bold"), local("ubuntu-bold"), url("/images/0ihfxul2emph0rojezvrad8e0i7kzn-epnyo3hzu7kw.woff") format("woff");
+	src: local("ubuntu bold"), local("ubuntu-bold"), url("../fonts/ubuntu-bold.woff") format("woff");
 }
 @font-face {
 	font-family: "ubuntu";
 	font-style: normal;
 	font-weight: normal;
-	src: local("ubuntu"), url("/images/_xyn3apat_yrrdeqb3sprg.woff") format("woff");
+	src: local("ubuntu"), url("../fonts/ubuntu.woff") format("woff");
 }
 html {
-	background: url("bg.png") left top repeat-x;
+	background: url("../images/bg.png") left top repeat-x;
 }
 body {
 	margin: 0 auto;
 	font-family: verdana, geneva, sans-serif;
 	font-size: 12px;
-	background: url("bg_footer.png") left bottom repeat-x;
+	background: url("../images/bg_footer.png") left bottom repeat-x;
+	min-width: 900px;
 }
 a {
 	color: #ef531d;
@@ -28,7 +29,7 @@ a:hover {
 }
 a[target^="_blank"] {
 	background-attachment: scroll;
-	background: url("extlink.gif") right top no-repeat;
+	background: url("../images/extlink.gif") right top no-repeat;
 	display: -moz-inline-stack;
 	display:inline-block;
 	zoom: 1;
@@ -41,8 +42,9 @@ acronym:hover {
 h1, h2, h3, h4, h5, h6 {
 	color: #ff9f2f;
 }
-ul li {
-	list-style-image: url("bullet.gif");
+#main_container ul li {
+	margin: 5px 0;
+	list-style-image: url("../images/bullet.gif");
 	list-style-type: none;
 }
 ol.question {
@@ -63,7 +65,7 @@ ol.response li {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(255, 255, 255, 0.90) url("loading-p.gif") center center no-repeat;
+	background: rgba(255, 255, 255, 0.90) url("../images/loading-p.gif") center center no-repeat;
 	box-shadow: 0 0 27px #f9f9f9 inset;
 	z-index: 9999;
 }
@@ -72,14 +74,16 @@ ol.response li {
 }
 #main_container {
 	position: relative;
-	width: 80%;
+	width: 90%;
 	left: 50%;
-	margin-left: -43%;
+	margin-left: -48%;
 	padding: 0 30px;
 }
 #top_menu {
+	position: relative;
 	background-color: #2d2d2d;
-	height: 29px;
+	height: 35px;
+	padding-top: 4px;
 	color: #ccc;
 }
 
@@ -93,9 +97,6 @@ td {
 #top_menu ul {
 	margin: 0;
 	padding: 0 10px 0 5px;
-	height: 27px;
-	margin-top: -2px;
-	font-size: 12px;
 }
 #top_menu ul li:first-child {
 	padding-left: 0;
@@ -104,15 +105,13 @@ td {
 	list-style-type: none;
 	display: inline-block;
 	padding: 0;
-	line-height: 27px;
+	font: normal 15px sans-serif;
 }
-#top_menu ul li a, #top_menu ul li a[target^="_blank"] {
-	background-image: none;
-	display: inline;
+#top_menu ul li a {
+	float: left;
+	padding: 6px 12px;
 	color: #ccc;
 	text-decoration: none;
-	height: 27px;
-	padding: 6px 4.5px;
 	border: #2d2d2d 1px solid;
 }
 #top_menu ul li a:hover {
@@ -136,17 +135,19 @@ td {
 	-o-transition-timing-function: ease-in-out;
 }
 #search {
-	margin-left: 15px;
+	width: 22%;
+	position: absolute; right: 0; top: 0;
 	background-color: #2d2d2d;
-	padding: 7px 8px 9px 9px;
+	padding: 9px 15px 9px 9px;
 	border-bottom-left-radius: 9px;
 	-moz-border-radius-bottomleft: 9px;
 	-webkit-border-bottom-left-radius: 9px;
 }
+#search form{ margin-bottom: 0 }
 #search input {
-	background-color: #fff;
 	width: 99%;
-	padding: 2px 1px 2px 2px;
+	margin: 0;
+	padding: 6px 1px 6px 6px;
 	border: #f0f0f0 1px solid;
 	border-top-left-radius: 0;
 	-moz-border-radius-topleft: 0;
@@ -162,7 +163,7 @@ td {
 		-webkit-border-bottom-right-radius: 0;
 	font-size: 15px;
 	position: relative;
-	background: #fff url("search_16.png") 3px 50% no-repeat;
+	background: #fff url("../images/search_16.png") no-repeat scroll 7px 50%;
 	text-indent: 21px;
 	z-index: 3;
 }
@@ -185,29 +186,26 @@ td {
 	margin-left: -40%;
 	padding: 6px 0;
 }
-#header table td:first-child {
-	height: 240px;
+#header{ padding: 60px 0 50px; overflow: hidden }
+#header .left img { margin-left: 15px }
+#header .left {
+	float: left;
+	width: 70%;
+	padding: 0;
 }
-#header table td:first-child img {
-	max-width: 473px;
-}
-#header table td:first-child {
-	padding: 0 0 15px 15px;
-}
-#header table td:last-child {
-	padding: 20px 14px 0 15px;
-}
-#header img {
-	width: 100%;
-	margin-top: 27px;
+#header .right {
+	float: right;
+	width: 30%;
+	padding: 0;
 }
 #header a#next_btn {
 	background-color: transparent;
-	background:url("next_page_btn.png") bottom left no-repeat;
+	background:url("../images/next_page_btn.png") bottom left no-repeat;
 	color: #fff;
 	text-decoration: none;
 	font-weight: normal;
 	font-family: "ubuntu";
+	margin-right: 15px;
 	padding: 18px 63px 27px 27px;
 	display: inline-block;
 	width: 153px;
@@ -264,21 +262,16 @@ transition-timing-function: ease-in-out;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-#top_menu table, #header table, #container table {
+#container table {
 	width: 100%;
-}
-#header table td:last-child {
-	width: 30%;;
-}
-#header table td:last-child, #content {
-	min-width: 250px;
 }
 #container {
 	font-family: "ubuntu";
 	text-align: justify;
 	padding-bottom: 120px;
+	overflow: hidden;
 }
-#container td > h1:first-child {
+#container h1:first-child {
 	margin-top: 5px;
 	margin-bottom: 0;
 	font-size: 3.2em;
@@ -286,7 +279,7 @@ transition-timing-function: ease-in-out;
 }
 #container h1 + h2 {
 	margin-top: 0;
-	margin-bottom: 54px;
+	margin-bottom: 35px;
 	color: #999;
 	font-size: 27px;
 }
@@ -302,11 +295,10 @@ transition-timing-function: ease-in-out;
 	border-radius: 36px;
 	-moz-border-radius: 36px;
 	-webkit-border-radius: 36px;
-}
-#content {
-	padding: 15px 15px 30px 15px;
+	padding: 0 15px 30px 15px;
 	color: #333;
 	font-size: 1.1em;
+	overflow: hidden;
 }
 #container h1 + table {
 	margin-bottom: 0;
@@ -330,11 +322,11 @@ div.content_middle {
 	-webkit-box-shadow: 0 0 54px #eee inset;
 }
 div.share_data {
-	background: url("network_intranet_128_666.png") 20px center no-repeat;
-	margin-bottom: 0;
+	background: url("../images/network_intranet_128_666.png") 20px center no-repeat;
+	margin-bottom: 0 !important;
 }
 div.community {
-	background: url("group_full_128_666.png") 20px center no-repeat;
+	background: url("../images/group_full_128_666.png") 20px center no-repeat;
 }
 ul#denied_list {
 	margin-top: 30px;
@@ -354,6 +346,9 @@ ul#denied_list li img {
 	float: left;
 	margin-right: 10px;
 }
+ul#denied_list .marginbottom{
+	position: relative; bottom: -6px;
+}
 #right_menu {
 	box-shadow: 0 0 72px #f1f1f1 inset;
 	-moz-box-shadow: 0 0 72px #f1f1f1 inset;
@@ -365,8 +360,7 @@ ul#denied_list li img {
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	padding: 25px 30px 15px 30px;
-	margin-top: -24px;
-	margin-left: 30px;
+	margin: 0 0 15px 30px;
 }
 #right_menu h3 {
 	font-size: 24px;
@@ -415,3 +409,5 @@ ul#denied_list li img {
 	font-size: 11px;
 	color: #aaa;
 }
+#page_content, #page_content p{ font-size: 14px; line-height: 21px }
+#container #page_content h1{ font-size: 27px; margin: 20px 0 }

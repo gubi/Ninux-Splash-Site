@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Ninux.org - HotSpot</title>
@@ -7,10 +8,10 @@
 	<meta name="author" content="Ninux.org Community - the Ninux Software Team" />
 	<meta name="description" content="Ninux.org Hot Spot Splash Site" />
 	
-	<link rel="shortcut icon" href="$imagesdir/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="$imagesdir/main.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="$imagesdir/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="$imagesdir/pages.js"></script>
+	<link rel="shortcut icon" href="common/images/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="common/css/main.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="common/js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="common/js/pages.js"></script>
 	<script type="text/javascript">
 	var menu;
 	var history = new Array();
@@ -28,7 +29,7 @@
 							$("title").html("Ninux.org - HotSpot");
 						}
 						$("#title").html(pages[content].title);
-						$.get("$imagesdir/" + pages[content].body, function(data){
+						$.get("common/includes/" + pages[content].body, function(data){
 							var page_body = stripslashes(data);
 							$("#page_content").html(page_body);
 						}, "text");
@@ -47,9 +48,11 @@
 			}
 		});
 		load_content($("#page").val());
-		$('#try_btn').click(function() {
+		/* ma questo non viene usato?
+        $('#try_btn').click(function() {
 			$("#search").css({"position": "fixed"}).find("input").addClass("centered").focus().blur(function(){ $("#search").css({"position": "relative"}).find("input").removeClass("centered"); });
 		});
+		*/
 	});
 	</script>
 </head>
@@ -57,43 +60,30 @@
 	<input type="hidden" id="page" value="home" />
 	<div id="loader"></div>
 	<div id="top_menu">
-		<table>
-			<tr>
-				<td>
-					<ul></ul>
-				</td>
-				<td rowspan="2">
-					<div id="search">
-						<form action="http://ninuxoo.ninux.org/cgi-bin/ninuxoo.cgi" method="get">
-							<input type="search" value="" placeholder="Cerca in Ninuxoo" name="q">
-							<input type="submit" value="" style="display: none;">
-						</form>
-					</div>
-				</td>
-			</tr>
-			<tr><td>&nbsp;</td></tr>
-		</table>
+        <ul></ul>
+        <div id="search">
+            <form action="http://ninuxoo.ninux.org/cgi-bin/ninuxoo.cgi" method="get">
+                <input type="text" value="Cerca su Ninuxoo" name="q" onfocus="if(this.value==this.defaultValue){this.value=''}" onblur="if(this.value==''){this.value=this.defaultValue}">
+                <input type="submit" value="" style="display: none;">
+            </form>
+        </div>
 	</div>
 	<div id="main_container">
 		<div id="header">
-			<table>
-				<tr>
-					<td>
-						<a href="javascript:void(0);" onclick="load_content('home');">
-							<img src="$imagesdir/logo.png" alt="Logo NINUX" />
-						</a>
-					</td>
-					<td>
-						<a id="next_btn" href="$authtarget">
-							<span>
-								Prosegui &rsaquo;
-								<span>Continua la navigazione su</span>
-								<span title="$redir">&rarr; $redir</span>
-							</span>
-						</a>
-					</td>
-				</tr>
-			</table>
+            <div class="left">
+                <a href="javascript:void(0);" onclick="load_content('home');">
+                    <img src="common/images/logo.png" alt="Logo NINUX" />
+                </a>
+            </div>
+            <div class="right">
+                <a id="next_btn" href="$authtarget">
+                    <span>
+                        Prosegui &rsaquo;
+                        <span>Continua la navigazione su</span>
+                        <span title="$redir">&rarr; $redir</span>
+                    </span>
+                </a>
+            </div>
 		</div>
 		<div id="container">
 			<div id="content">
@@ -107,15 +97,16 @@
 						<li><a href="http://ninuxoo.ninux.org/cgi-bin/proxy_wiki.cgi?url=Elenco_Telefonico_rete_VoIP_di_ninux.org" title="Elenco Telefonico VoIP Ninux.org">VoIP</a><span>Elenco Telefonico VoIP Ninux.org</span></li>
 						<li><a href="http://10.162.0.85/" title="Accesso alla posta elettronica">WebMail</a><span>Accesso alla posta elettronica</span></li>
 						<li><a href="http://10.168.177.178:8888" title="Ascolta la musica condivisa!">Juke Box</a><span>Ascolta la musica condivisa!</span></li>
+                        <li><a href="http://wiki.ninux.org/Jabber" title="Chatta con noi! Richiede inoltro a internet">Chat</a><span>Messagistica istantanea</span></li>
 					</ul>
 					<ul>
-						<li><a href="mailto:Ninux.org <contatti@ninux.org>" title="Contatto di posta elettronica">Contatti</a></li>
+						<li><a href="mailto:Ninux.org <contatti@ninux.org>" title="Contatto di posta elettronica">Contattaci via email</a></li>
 					</ul>
 				</div>
 				<div id="page_content"></div>
 			</div>
 			<div id="footer">
-				Splash site powered by Ninux.org ~ the Ninux Software Team :: used icons was made by <a href="http://www.picol.org/" target="_blank" title="PIctorial COmmunication Language - Richiede inoltro a Internet">Picol project</a>
+				Splash site powered by Ninux.org ~ the Ninux Software Team :: icons by <a href="http://www.picol.org/" target="_blank" title="PIctorial COmmunication Language - Richiede inoltro a Internet">Picol project</a>
 			</div>
 		</div>
 	</div>

@@ -10,49 +10,49 @@ var pages = {
 		id: "home",
 		page: "",
 		title: "Benvenut* in Ninux!",
-		body: "home.tpl",
+		body: "home.html",
 		show_on_menu: true
 	},
 	"manifesto": {
 		id: "manifesto",
 		page: "Manifesto",
 		title: "Pagina del Manifesto",
-		body: "manifesto.tpl",
+		body: "manifesto.html",
 		show_on_menu: true
 	},
 	"wcm": {
 		id: "wcm",
 		page: "Wireless Community Manifesto",
 		title: "Wireless Community Manifesto",
-		body: "wcm.tpl",
+		body: "wcm.html",
 		show_on_menu: false
 	},
 	"la_rete": {
 		id: "la_rete",
 		page: "La Rete",
 		title: "La Rete",
-		body: "la_rete.tpl",
+		body: "la_rete.html",
 		show_on_menu: true
 	},
 	"cn": {
 		id: "cn",
 		page: "Community Network",
 		title: "Community Network",
-		body: "cn.tpl",
+		body: "cn.html",
 		show_on_menu: true
 	},
 	"ppa": {
 		id: "ppa",
 		page: "Picopeering Agreement",
 		title: "Picopeering Agreement",
-		body: "ppa.tpl",
+		body: "ppa.html",
 		show_on_menu: false
 	},
 	"faq": {
 		id: "faq",
 		page: "FAQ",
 		title: "Frequently Asked Questions",
-		body: "faq.tpl",
+		body: "faq.html",
 		show_on_menu: true
 	}
 };
