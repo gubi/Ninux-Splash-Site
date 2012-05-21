@@ -17,9 +17,9 @@
 	var history = new Array();
 	function stripslashes(str) { str = str.replace(/\\'/g,'\''); str = str.replace(/\\"/g,'"'); str = str.replace(/\\0/g,'\0'); str = str.replace(/\\\\/g,'\\'); return str; }
 	function load_content(content){
-		history.push(pages[content].id);
+		the_history.push(pages[content].id);
 		if(pages[content]) {
-			if (history[history.length-2] != pages[content].id){
+			if (the_history[the_history.length-2] != pages[content].id){
 				$("#loader").fadeIn(100, function(){
 					$("#page").val(pages[content].id);
 					$("#title, #page_content").fadeOut(300, function() {
