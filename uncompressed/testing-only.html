@@ -14,12 +14,12 @@
 	<script type="text/javascript" src="common/js/pages.js"></script>
 	<script type="text/javascript">
 	var menu;
-	var history = new Array();
+	var the_history = new Array();
 	function stripslashes(str) { str = str.replace(/\\'/g,'\''); str = str.replace(/\\"/g,'"'); str = str.replace(/\\0/g,'\0'); str = str.replace(/\\\\/g,'\\'); return str; }
 	function load_content(content){
-		history.push(pages[content].id);
+		the_history.push(pages[content].id);
 		if(pages[content]) {
-			if (history[history.length-2] != pages[content].id){
+			if (the_history[the_history.length-2] != pages[content].id){
 				$("#loader").fadeIn(100, function(){
 					$("#page").val(pages[content].id);
 					$("#title, #page_content").fadeOut(300, function() {
@@ -70,20 +70,22 @@
 	</div>
 	<div id="main_container">
 		<div id="header">
-            <div class="left">
-                <a href="javascript:void(0);" onclick="load_content('home');">
-                    <img src="common/images/logo.png" alt="Logo NINUX" />
-                </a>
-            </div>
-            <div class="right">
-                <a id="next_btn" href="$authtarget">
-                    <span>
-                        Prosegui &rsaquo;
-                        <span>Continua la navigazione su</span>
-                        <span title="$redir">&rarr; $redir</span>
-                    </span>
-                </a>
-            </div>
+			<div id="row">
+		            <div class="left">
+        		        <a href="javascript:void(0);" onclick="load_content('home');">
+        		            <img src="common/images/logo.png" alt="Logo NINUX" />
+        		        </a>
+        		    </div>
+        		    <div class="right">
+        		        <a id="next_btn" href="$authtarget">
+        		            <span>
+                		        Prosegui &rsaquo;
+                		        <span>Continua la navigazione su</span>
+                		        <span title="$redir">&rarr; $redir</span>
+                		    </span>
+               			 </a>
+        		    </div>
+			</div>
 		</div>
 		<div id="container">
 			<div id="content">
@@ -97,7 +99,7 @@
 						<li><a href="http://ninuxoo.ninux.org/cgi-bin/proxy_wiki.cgi?url=Elenco_Telefonico_rete_VoIP_di_ninux.org" title="Elenco Telefonico VoIP Ninux.org">VoIP</a><span>Elenco Telefonico VoIP Ninux.org</span></li>
 						<li><a href="http://10.162.0.85/" title="Accesso alla posta elettronica">WebMail</a><span>Accesso alla posta elettronica</span></li>
 						<li><a href="http://10.168.177.178:8888" title="Ascolta la musica condivisa!">Juke Box</a><span>Ascolta la musica condivisa!</span></li>
-                        <li><a href="http://wiki.ninux.org/Jabber" title="Chatta con noi! Richiede inoltro a internet">Chat</a><span>Messagistica istantanea</span></li>
+                     				<li><a href="http://wiki.ninux.org/Jabber" title="Chatta con noi! Richiede inoltro a internet">Chat</a><span>Messagistica istantanea</span></li>
 					</ul>
 					<ul>
 						<li><a href="mailto:Ninux.org <contatti@ninux.org>" title="Contatto di posta elettronica">Contattaci via email</a></li>
