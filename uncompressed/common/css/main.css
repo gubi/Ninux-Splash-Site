@@ -73,18 +73,11 @@ ol.response li {
 	cursor: progress;
 }
 #main_container {
-	position: relative;
+	position: absolute;
 	width: 90%;
 	left: 50%;
 	margin-left: -48%;
-	padding: 0 30px;
-}
-#top_menu {
-	position: relative;
-	background-color: #2d2d2d;
-	height: 35px;
-	padding-top: 4px;
-	color: #ccc;
+	padding: 39px 30px 0 30px;
 }
 
 table {
@@ -94,9 +87,16 @@ table {
 td {
 	padding: 0;
 }
+#top_menu {
+	position: absolute;
+	background-color: #2d2d2d;
+	height: 31px;
+	color: #ccc;
+	width: 100%;
+}
 #top_menu ul {
 	margin: 0;
-	padding: 0 10px 0 5px;
+	padding: 0;
 }
 #top_menu ul li:first-child {
 	padding-left: 0;
@@ -109,10 +109,11 @@ td {
 }
 #top_menu ul li a {
 	float: left;
-	padding: 6px 12px;
+	padding: 6px 8px;
 	color: #ccc;
 	text-decoration: none;
 	border: #2d2d2d 1px solid;
+	font-size: 0.9em;
 }
 #top_menu ul li a:hover {
 	color: #fff;
@@ -186,17 +187,29 @@ td {
 	margin-left: -40%;
 	padding: 6px 0;
 }
-#header{ padding: 60px 0 50px; overflow: hidden }
-#header .left img { margin-left: 15px }
+#header{
+	padding: 60px 0 50px;
+	overflow: hidden;
+	display: table;
+}
+#header #row {
+	display: table-row;
+}
+#header .left, #header .right {
+	display: table-cell;
+}
 #header .left {
-	float: left;
-	width: 70%;
+	vertical-align: middle;
 	padding: 0;
 }
+#header .left img {
+	max-width: 473px;
+	max-height: 105px;
+	width: 90%;
+}
 #header .right {
-	float: right;
-	width: 30%;
-	padding: 0;
+	width: 243px;
+	padding: 0 16px 0 0;
 }
 #header a#next_btn {
 	background-color: transparent;
