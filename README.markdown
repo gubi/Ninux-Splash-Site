@@ -51,8 +51,7 @@ You can save much loading time simply by compressing contents and scripts in one
     #
     #	- - -
     #	Created by Alessandro Gubitosi
-    #	for the PICOL Project
-    #	on November 2010
+    #	on May 2012
     #    
 
 This application is released under the Free GNU General Public License v3.0.
